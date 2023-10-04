@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\Fighter;
+namespace App\Entity;
 
 class Fighter
 {
