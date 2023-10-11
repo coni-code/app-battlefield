@@ -9,3 +9,7 @@ dstop() {
 dexec() {
     docker exec -it "$@"
 }
+
+dconsole() {
+    php bin/console "$@"
+}
