@@ -16,8 +16,6 @@ abstract class AbstractFighter
     #[ORM\Column(length: 26)]
     private ?string $name = null;
 
-    
-
     public function getId(): ?int
     {
         return $this->id;

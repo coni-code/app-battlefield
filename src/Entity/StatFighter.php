@@ -34,12 +34,12 @@ class StatFighter
     #[ORM\Column]
     private ?int $luck = null;
 
-    #[ORM\OneToOne(targetEntity: AbstractFighter::class, inversedBy: 'stat')]
+    #[ORM\OneToOne(inversedBy: 'stat', targetEntity: AbstractFighter::class)]
     private AbstractFighter $fighter;
 
     public function getFighter(): AbstractFighter
     {
-        return $this->$fighter;
+        return $this->fighter;
     }
     public function setFighter(AbstractFighter $fighter): void
     {
@@ -120,8 +120,9 @@ class StatFighter
     {
         $this->luck = $luck;
     }
+
     protected function getRandomProperty(): int
     {
-        
+        return 0;
     }
 }
