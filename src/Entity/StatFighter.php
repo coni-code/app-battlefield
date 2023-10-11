@@ -34,16 +34,17 @@ class StatFighter
     #[ORM\Column]
     private ?int $luck = null;
 
-    #[ORM\OneToOne(inversedBy: 'stat', targetEntity: AbstractFighter::class)]
-    private AbstractFighter $fighter;
+    #[ORM\OneToOne(inversedBy: 'stat', targetEntity: MageFighter::class)]
+    #[ORM\JoinColumn(name: 'fighter_id', referencedColumnName: 'id')]
+    private MageFighter $mageFighter;
 
     public function getFighter(): AbstractFighter
     {
-        return $this->fighter;
+        return $this->mageFighter;
     }
-    public function setFighter(AbstractFighter $fighter): void
+    public function setFighter(AbstractFighter $mageFighter): void
     {
-        $this->fighter = $fighter;
+        $this->mageFighter = $mageFighter;
     }
 
     public function getId(): ?int

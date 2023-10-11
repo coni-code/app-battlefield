@@ -9,7 +9,7 @@ use App\Repository\MageFighterRepository;
 #[ORM\Entity(repositoryClass: MageFighterRepository::class)]
 class MageFighter extends AbstractFighter
 {
-    #[ORM\OneToOne(mappedBy: 'fighter', targetEntity: StatFighter::class)]
+    #[ORM\OneToOne(mappedBy: 'mageFighter', targetEntity: StatFighter::class)]
     private StatFighter $stat;
 
     public function getStat(): StatFighter
